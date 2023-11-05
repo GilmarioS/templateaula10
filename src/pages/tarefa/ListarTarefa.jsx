@@ -64,9 +64,7 @@ const ListarTarefa = () => {
   useEffect(() => {
     setTarefas(initialRows);
   },[]);
-  <Link to="/login"> {/* Use o Link para redirecionar para a página de login */}
-  <Button size="small" variant="contained" color="warning">Sair</Button>
-</Link>
+ 
   const handleEditar = (id) => {
     setIdTarefaSelecionada(id);
 
