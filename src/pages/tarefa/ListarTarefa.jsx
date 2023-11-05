@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -17,6 +18,8 @@ import Modal from '@mui/material/Modal';
 
 import CriarTarefa from './CriarTarefa';
 import EditarTarefa from './EditarTarefa';
+import Login from '../Login';
+
 
 //A função abaixo é usada para criar o array contendo os dados iniciais da listagem de tarefas.
 function createData(
@@ -53,11 +56,17 @@ const ListarTarefa = () => {
   const handleOpenEditar = () => setOpenEditar(true);
   const handleCloseEditar = () => setOpenEditar(false);
 
+  const handleReload = () => {
+    window.location.reload(); // Isso recarregará a página
+  };
+
   //O array definido acima é setado como conteúdo do state Tarefas na renderização inicial do componente.
   useEffect(() => {
     setTarefas(initialRows);
   },[]);
-
+  <Link to="/login"> {/* Use o Link para redirecionar para a página de login */}
+  <Button size="small" variant="contained" color="warning">Sair</Button>
+</Link>
   const handleEditar = (id) => {
     setIdTarefaSelecionada(id);
 
@@ -136,6 +145,10 @@ const ListarTarefa = () => {
         <CardActions>
             <Button size="small" variant="contained" onClick={handleOpen}>Criar Tarefa</Button>
             <Button size="small" variant="outlined">Cancelar</Button>
+            <Button size="small" variant="contained" color="info" onClick={handleReload}>Sair</Button>           
+            <CardActions>
+         
+  </CardActions>
       </CardActions> 
     </Card>
     <div>
