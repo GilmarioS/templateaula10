@@ -145,7 +145,7 @@ const ListarTarefa = () => {
         <CardActions>
             <Button size="small" variant="contained" onClick={handleOpen}>Criar Tarefa</Button>
             <Button size="small" variant="outlined">Cancelar</Button>
-            <Button size="small" variant="contained" color="info" onClick={handleReload}>Sair</Button>           
+            <Button size="small" variant="contained" color="warning" onClick={handleReload}>Sair</Button>           
             <CardActions>
          
   </CardActions>
